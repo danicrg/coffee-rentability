@@ -3,14 +3,14 @@ import pandas as pd
 
 st.image('https://thesourcebulkfoods.com.au/wp-content/uploads/2017/09/60101-Coffee-Beans.jpg', use_column_width=True)
 
-st.title('Calculadora de inversión en una nueva cafetera de grano')
+st.title('Calculadora de inversión en una nueva cafetera de grano :coffee:')
 
-st.subheader('Datos de la cafetera actual')
+st.subheader(':page_with_curl: Datos de la cafetera actual')
 
 per_coffee_cost = st.number_input('Coste por café (€)', 0.0, 10.0, 0.40)
 n_coffees_per_day = st.slider('Cafés diarios', 1, 20, 7)
 
-st.subheader('Datos de la nueva cafetera')
+st.subheader(':page_facing_up: Datos de la nueva cafetera')
 
 machine_cost = st.number_input('Coste de la nueva cafetera (€)', 0.0, 2000.0, 200.0)
 coffee_bag_cost = st.number_input('Coste de una bolsa de granos de café (€)', 0.0, 30.0, 5.0)
@@ -23,7 +23,7 @@ times_cheaper = int(-(-per_coffee_cost/new_per_coffee_cost))
 
 st.markdown(f'Cada taza cuesta **{round(new_per_coffee_cost, 3)} €** en la nueva máquina, **{times_cheaper} veces más barato** que con tu máquina actual.')
 
-st.subheader('Amortización de la compra')
+st.subheader(':chocolate_bar: Amortización de la compra')
 
 st.markdown('Cada día, el coste diario de haber comprado una nueva máquina se irá reduciendo, ya que el desembolso de la compra de la máquina es solo el primer día. En el momento en que coincide el coste diario con el de la antigua máquina estará amortizada la compra y comenzarás a ahorrar.')
 
@@ -61,7 +61,7 @@ st.vega_lite_chart(data[:amortization_time*2], {
 
 st.markdown(f'En **{round(amortization_time)} días** estará amortizada la máquina de café.')
 
-st.subheader('Ahorro por la nueva cafetera')
+st.subheader(':euro: Ahorro por la nueva cafetera')
 
 st.vega_lite_chart(data[amortization_time:], {
 	"width": "container",
