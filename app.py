@@ -82,7 +82,8 @@ st.markdown(f'Cada año ahorrarás de media **{round(average_savings, 2)} €**'
 st.markdown(f'En la vida útil de la máquina ({N_YEARS_FORWARD} años) ahorrarás **{round(total_savings, 2)} €**')
 
 st.markdown('------')
-st.markdown(':computer: by [Daniel Carlander](https://github.com/danicrg/)')
+st.markdown(':computer: by [Daniel Carlander](https://github.com/danicrg/). Code available in [GitHub](https://github.com/danicrg/coffee-rentability)')
+st.markdown('')
 
 
 
