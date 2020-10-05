@@ -8,14 +8,14 @@ st.title('Calculadora de inversión en una nueva cafetera de grano')
 st.subheader('Datos de la cafetera actual')
 
 per_coffee_cost = st.number_input('Coste por café (€)', 0.0, 10.0, 0.40)
-n_coffees_per_day = st.number_input('Cafés diarios', 0, 30, 7)
+n_coffees_per_day = st.slider('Cafés diarios', 1, 20, 7)
 
 st.subheader('Datos de la nueva cafetera')
 
 machine_cost = st.number_input('Coste de la nueva cafetera (€)', 0.0, 2000.0, 200.0)
 coffee_bag_cost = st.number_input('Coste de una bolsa de granos de café (€)', 0.0, 30.0, 5.0)
 n_servins_per_bag = st.number_input('Número de tazas por bolsa', 0, 400, 100)
-N_YEARS_FORWARD = int(st.number_input('Vida útil de la cafetera (años)', 10, 400, 20))
+N_YEARS_FORWARD = int(st.slider('Vida útil de la cafetera (años)', 10, 40, 20))
 
 new_per_coffee_cost = coffee_bag_cost / n_servins_per_bag
 
@@ -24,6 +24,8 @@ times_cheaper = int(-(-per_coffee_cost/new_per_coffee_cost))
 st.markdown(f'Cada taza cuesta **{round(new_per_coffee_cost, 3)} €** en la nueva máquina, **{times_cheaper} veces más barato** que con tu máquina actual.')
 
 st.subheader('Amortización de la compra')
+
+st.markdown('Cada día, el coste diario de haber comprado una nueva máquina se irá reduciendo, ya que el desembolso de la compra de la máquina es solo el primer día. En el momento en que coincide el coste diario con el de la antigua máquina estará amortizada la compra y comenzarás a ahorrar.')
 
 amortization_time = int((machine_cost + -new_per_coffee_cost*n_coffees_per_day)//((per_coffee_cost-new_per_coffee_cost)*n_coffees_per_day))
 
@@ -40,7 +42,7 @@ data['savings'] = data['savings'].expanding().sum()
 
 st.vega_lite_chart(data[:amortization_time*2], {
 	"width": "container",
-  	"height": 500,
+  	"height": 400,
 	"layer": [{
 		"mark": {"type": "line", "color": "#85C5A6"},
 		"encoding": {
@@ -63,7 +65,7 @@ st.subheader('Ahorro por la nueva cafetera')
 
 st.vega_lite_chart(data[amortization_time:], {
 	"width": "container",
-  	"height": 0,
+  	"height": 300,
 	"mark": {"type": "line", "color": "#85C5A6"},
 	"encoding": {
 		"x": {"field": "days", "type": "quantitative"},
@@ -80,7 +82,7 @@ st.markdown(f'Cada año ahorrarás de media **{round(average_savings, 2)} €**'
 st.markdown(f'En la vida útil de la máquina ({N_YEARS_FORWARD} años) ahorrarás **{round(total_savings, 2)} €**')
 
 st.markdown('------')
-st.markdown(':computer: by Daniel Carlander')
+st.markdown(':computer: by [Daniel Carlander](https://github.com/danicrg/)')
 
 
 
