@@ -87,5 +87,5 @@ else:
 	st.markdown(f'En la vida útil de la máquina ({N_YEARS_FORWARD} años) ahorrarás **{round(total_savings, 2)} €**')
 
 	st.markdown('------')
-	st.markdown(':computer: by [Daniel Carlander](https://danielcarlander.com/?utm_source=coffee-rentability-dashboard). Code available in [GitHub](https://github.com/danicrg/coffee-rentability)')
+	st.markdown(':computer: by [Daniel Carlander](https://danielcarlander.com/?utm_source=coffee-rentability-dashboard&utm_medium=referral). Code available in [GitHub](https://github.com/danicrg/coffee-rentability)')
 	st.markdown(':page_with_curl: Article [here](https://danielcarlander.com/coffee-rentability?utm_source=coffee-rentability-dashboard).')
