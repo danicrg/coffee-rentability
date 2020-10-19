@@ -9,7 +9,7 @@ st.subheader(':page_with_curl: Datos de la cafetera actual')
 per_coffee_cost = st.number_input('Coste por café (€)', 0.0, 10.0, 0.40)
 n_coffees_per_day = st.slider('Cafés diarios', 1, 20, 7)
 
-st.subheader(':page_facing_up: Datos de la nueva cafetera')
+st.subheader(':page_facing_up: Datos de la [nueva cafetera](https://amzn.to/2HbXDtn)')
 
 machine_cost = st.number_input('Coste de la nueva cafetera (€)', 0.0, 2000.0, 200.0)
 coffee_bag_cost = st.number_input('Coste de una bolsa de granos de café (€)', 0.0, 30.0, 5.0)
@@ -87,4 +87,5 @@ else:
 	st.markdown(f'En la vida útil de la máquina ({N_YEARS_FORWARD} años) ahorrarás **{round(total_savings, 2)} €**')
 
 	st.markdown('------')
-	st.markdown(':computer: by [Daniel Carlander](https://github.com/danicrg/). Code available in [GitHub](https://github.com/danicrg/coffee-rentability)')
+	st.markdown(':computer: by [Daniel Carlander](https://danielcarlander.com/?utm_source=coffee_rentability&utm_medium=signature&utm_term=organic). Code available in [GitHub](https://github.com/danicrg/coffee-rentability)')
+	st.markdown(':page_with_curl: Article [here](https://danielcarlander.com/coffee-rentability?utm_source=coffee-rentability-dashboard&utm_medium=signature&utm_term=organic).')
