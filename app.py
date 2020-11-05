@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 
-st.title('Calculadora de inversión en una nueva cafetera de grano :coffee:')
-st.image('https://thesourcebulkfoods.com.au/wp-content/uploads/2017/09/60101-Coffee-Beans.jpg', use_column_width=True)
+st.title('Should I buy a new coffee machine? :coffee:')
+st.image('./coffee.jpg', use_column_width=True)
 
 st.subheader(':page_with_curl: Datos de la cafetera actual')
 
