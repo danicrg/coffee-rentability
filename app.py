@@ -29,8 +29,8 @@ else:
 	st.markdown(f'Each coffee costs **{round(new_per_coffee_cost, 3)} €** with the new machine, **{round(times_cheaper, 1)} times cheaper** than with your current machine.')
 
 	st.subheader(':chocolate_bar: Repayment of the purchase')
-	st.markdown('- **Green Line:** Cummulative cost of new machine. It starts with the machine cost.\n' + 
-		'- **Red Line:** Cummulative cost of the current machine.')
+	st.markdown('- **Green Line:** Cumulative cost of new machine. It starts with the machine cost.\n' + 
+		'- **Red Line:** Cumulative cost of the current machine.')
 	st.markdown('When the lines cross you start saving.')
 
 
