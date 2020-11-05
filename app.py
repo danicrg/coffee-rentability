@@ -6,7 +6,7 @@ st.image('./coffee.jpg', use_column_width=True)
 
 st.subheader(':page_with_curl: My current Coffee Machine')
 
-per_coffee_cost = st.number_input('Coste per coffee (€)', 0.0, 10.0, 0.40)
+per_coffee_cost = st.number_input('Cost per coffee (€)', 0.0, 10.0, 0.40)
 n_coffees_per_day = st.slider('Coffees per day', 1, 20, 7)
 
 st.subheader(':page_facing_up: [New Coffee Machine](https://amzn.to/2HbXDtn)')
@@ -28,7 +28,7 @@ else:
 
 	st.markdown(f'Each coffee costs **{round(new_per_coffee_cost, 3)} €** with the new machine, **{round(times_cheaper, 1)} times cheaper** than with your current machine.')
 
-	st.subheader(':chocolate_bar: Repayment of the buy')
+	st.subheader(':chocolate_bar: Repayment of the purchase')
 	st.markdown('- **Green Line:** Cummulative cost of new machine. It starts with the machine cost.\n' + 
 		'- **Red Line:** Cummulative cost of the current machine.')
 	st.markdown('When the lines cross you start saving.')
@@ -52,13 +52,13 @@ else:
 			"mark": {"type": "line", "color": "#85C5A6"},
 			"encoding": {
 				"x": {"field": "days", "type": "quantitative", "title": "Days"},
-				"y": {"field": "new_cost", "type": "quantitative", "title": "New Cummulative Cost"}
+				"y": {"field": "new_cost", "type": "quantitative", "title": ""}
 			}
 		}, {
 	    	"mark": {"type": "line", "color": "#FF6961"},
 			"encoding": {
 				"x": {"field": "days", "type": "quantitative"},
-				"y": {"field": "actual_cost", "type": "quantitative", "title": "Current Cummulative Cost"}
+				"y": {"field": "actual_cost", "type": "quantitative", "title": ""}
 			}
 		}]
 	}, use_container_width=True)
@@ -84,7 +84,7 @@ else:
 
 	st.markdown(f'Each year you will save in average **{round(average_savings, 2)} €**')
 
-	st.markdown(f'In the lifespan of the machine ({N_YEARS_FORWARD} años) you will save **{round(total_savings, 2)} €**')
+	st.markdown(f'In the lifespan of the machine ({N_YEARS_FORWARD} years) you will save **{round(total_savings, 2)} €**')
 
 	st.markdown('------')
 	st.markdown(':computer: by [Daniel Carlander](https://danielcarlander.com/?utm_source=coffee-rentability-dashboard&utm_medium=referral). Code available in [GitHub](https://github.com/danicrg/coffee-rentability)')
